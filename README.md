@@ -12,6 +12,7 @@ This API provides endpoints to retrieve call center complaint data for dashboard
 - RESTful API endpoints
 - CORS support for cross-origin requests
 - Error handling and logging
+- Flask cache integration available for performance optimization
 
 ## Tech Stack
 
@@ -19,6 +20,7 @@ This API provides endpoints to retrieve call center complaint data for dashboard
 - Express.js
 - SQL Server (MSSQL)
 - Jade templating engine
+- Flask cache (optional for caching responses)
 
 ## API Endpoints
 
@@ -55,6 +57,15 @@ npm start
 ```
 The server will start on port 3000 by default (or the port specified in your environment).
 
+## Caching with Flask
+
+The API includes a Flask cache implementation (`flask_cache.py`) that can be integrated to improve performance by caching frequently requested data. This reduces database load and improves response times for repeated queries.
+
+To enable Flask caching:
+1. Ensure Python and Flask are installed
+2. Configure the cache settings in the Flask cache module
+3. Integrate the cache with your API endpoints as needed
+
 ## Project Structure
 
 - `app.js` - Main application file
@@ -62,6 +73,7 @@ The server will start on port 3000 by default (or the port specified in your env
 - `routes/` - API route definitions
 - `dboperation.js` - Database operations and queries
 - `dbconfig.js` - Database configuration
+- `flask_cache.py` - Flask caching implementation
 - `views/` - Jade templates for rendering views
 - `public/` - Static files
 
